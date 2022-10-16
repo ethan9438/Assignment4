@@ -12,8 +12,6 @@ final class MyLibraryTests: XCTestCase {
         )
 
         let myLibrary = MyLibrary(weatherService: mockWeatherService)
-        // I wrote this code
-        //let myWeather = MyLibrary(weatherService: WeatherServiceImpl())
 
         // When
         let isLuckyNumber = await myLibrary.isLucky(8)

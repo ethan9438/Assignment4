@@ -10,7 +10,7 @@ enum BaseUrl : String {
 }
 class WeatherServiceImpl: WeatherService {
     let url = "https://api.openweathermap.org/data/2.5/weather?q=corvallis&units=imperial&appid=83bb46056b88994b9933ca43de8475e4"
-//        "\(BaseUrl.openweathermap)/data/2.5/weather?q=corvallis&units=imperial&appid=83bb46056b88994b9933ca43de8475e4"
+
     func getTemperature() async throws -> Int {
         return try await withCheckedThrowingContinuation { continuation in
             AF.request(url, method: .get).validate(statusCode: 200..<300).responseDecodable(of: Weather.self) { response in
